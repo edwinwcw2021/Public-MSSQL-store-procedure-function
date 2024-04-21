@@ -18,6 +18,14 @@ Considerations for program design are as follows:
 7. The purpose of using dataCheck.xlsx is to minimize calculation errors by ensuring consistency across different programming languages or workflows. This helps to validate the accuracy of calculations. While double faults are rare, particularly in cross-checking report results from different groups, the grand total should match in most cases. I've attached an Excel formula that mirrors the SQL function shown in the screenshot. I can conduct rapid unit tests to validate that the code runs correctly and serves its intended purpose. Additionally, I can generate more test cases to ensure system stability. However, I cannot guarantee that the program is entirely bug-free, as I completed the script in just a few hours.
 ![screen 2](https://freeware.vagweb.com/images/repay/excel_compare.png)
 
+## input paramter for the SQL table function **fnRepaySchedule**
+- @loan: Principle (PV) beginning balance, acceptable range greater than 1.
+* @interest: Annual interest rate (e.g., 8% input as 0.08), should be greater than zero.
+* @effectiveDate: Loan start date in yyyy-mm-dd format.
+* @repayDate: Day of repayment. If repay on the 5th of each month, input '05'. If the repayment date is greater than the end of each month, it changes to the last day of each month.
++ @term: Number of terms (months) for repayment.
+
+
 ## Prerequisites:
 ### SQL Server: MSSQL 2012 or above.
 #### Software:
